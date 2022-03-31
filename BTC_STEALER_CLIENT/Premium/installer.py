@@ -3,17 +3,8 @@ import time
 
 print("Installing Requirements.....")
 try:
-    os.system("pip3 install bitcoin")
+    os.system("pip3 install bitcoin urllib3 datetime requests psutil colorama")
     time.sleep(2)
-    os.system("pip3 install urllib3")
-    time.sleep(2)
-    os.system("pip3 install datetime")
-    time.sleep(2)
-    os.system("pip3 install requests")
-    time.sleep(2)
-    os.system("pip3 install psutil")
-    time.sleep(2)
-    os.system("pip3 install colorama")
 
 except:
-    print("No Pip installed!")
+    print("No Packages installed (Check your enviromental variables)")
