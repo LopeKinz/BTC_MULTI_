@@ -1,14 +1,12 @@
-import colorama
+from colorama import *
 import json
 import ctypes
 import os
 import time
 
 
-class ping:
-    def main(self, IP):
-        print(colorama.Fore.GREEN + "Pinging " + IP + "...")
-        os.system("ping -c 1 " + IP)
+
+        
 
 
 
@@ -18,14 +16,14 @@ class Menu:
         self.fileName = "config.txt"
     ctypes.windll.kernel32.SetConsoleTitleW("BanHammer TOOLKIT v1.0") 
     def main(self):
-        logo = """
+        logo = f"""{Fore.RESET}
         ███████████████████████████████████████████████████████████████████████████████████████████████████
         █▄─▄─▀██▀▄─██▄─▀█▄─▄█─█─██▀▄─██▄─▀█▀─▄█▄─▀█▀─▄█▄─▄▄─█▄─▄▄▀███─▄─▄─█─▄▄─█─▄▄─█▄─▄███▄─█─▄█▄─▄█─▄─▄─█
         ██─▄─▀██─▀─███─█▄▀─██─▄─██─▀─███─█▄█─███─█▄█─███─▄█▀██─▄─▄█████─███─██─█─██─██─██▀██─▄▀███─████─███
         ▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▄▀▄▀▄▄▀▄▄▀▄▄▄▀▄▄▄▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀▀▄▄▄▀▀▄▄▄▄▀▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▀▀▄▄▄▀▀
         """
 
-        main_menu = """
+        main_menu = f"""{Fore.RESET}
                                     +------------+---------+----------+
                                     |   Tools    | Version | Working? |
                                     +============+=========+==========+
@@ -35,8 +33,8 @@ class Menu:
                                     +------------+---------+----------+
         """
         
-        self.slowType(logo, 0.001, False)
-        self.slowType(main_menu, 0.002, False)
+        self.slowType(logo, 0.00001, False)
+        self.slowType(main_menu, 0.00001, False)
         input_command = input("\n> ")
         self.console(command = input_command)
     def reopen_console(self):
@@ -71,7 +69,7 @@ class Menu:
             """)
             self.reopen_console()
         if command == 'portscan':
-            print("Portscan is currently not working")
+            os.system("python port-scanner/main.py")
             self.reopen_console()
         if command == 'BTCStealer':
             print("BTCStealer is currently not working")
