@@ -3,7 +3,7 @@ import time
 
 print("Installing Requirements.....")
 try:
-    os.system("pip3 install bitcoin urllib3 datetime requests psutil colorama certifi PySocks requests-futures stem torrequest")
+    os.system("pip3 install bitcoin urllib3 datetime requests psutil colorama certifi PySocks requests-futures stem torrequest discord colored")
     time.sleep(2)
 
 except:

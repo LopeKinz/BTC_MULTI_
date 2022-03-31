@@ -33,6 +33,7 @@ class Menu:
                                     | UserFinder |     1.0 | YES      |
                                     | NitroGen   |     1.0 | YES      |
                                     | GiftCard   |     1.0 | YES      |
+                                    |DC ACC Nuker|     1.0 | YES      |
                                     +------------+---------+----------+
         """
         
@@ -62,6 +63,7 @@ class Menu:
             nitrogen - Generate nitro codes and checks them
             BTCStealer - Steal BTC
             giftcard - Generate gift cards
+            dcaccnuker - Nuke discord accounts
             help - Show this help
             clear - Clear the console
             exit - Exit the console
@@ -89,6 +91,8 @@ class Menu:
             self.reopen_console()
         if command == 'giftcard':
             os.system("python giftcardgen/main.py")
+        if command == 'dcaccnuker':
+            os.system("python accnuker/main.py")
 if __name__ == '__main__':
     menu = Menu()
     menu.main()
