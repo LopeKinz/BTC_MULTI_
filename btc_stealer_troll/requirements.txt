@@ -1,0 +1,2 @@
+colorama # colorama is a module that allows for colored text in the terminal
+bitcoin # bitcoin is a module that allows for the use of the bitcoin blockchain
