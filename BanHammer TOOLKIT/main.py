@@ -4,17 +4,17 @@ import ctypes
 import os
 import time
 
+version = "v2.0"
+
+ctypes.windll.kernel32.SetConsoleTitleW(f"BanHammer Toolkit {version} Made By BanHammer Team!")
 
 
-        
-
-
+    
 
 
 class Menu:
     def __init__(self):
-        self.fileName = "config.txt"
-    ctypes.windll.kernel32.SetConsoleTitleW("BanHammer TOOLKIT v1.0") 
+        self.fileName = "config.txt" 
     def main(self):
         logo = f"""{Fore.RESET}
         ███████████████████████████████████████████████████████████████████████████████████████████████████
@@ -22,7 +22,6 @@ class Menu:
         ██─▄─▀██─▀─███─█▄▀─██─▄─██─▀─███─█▄█─███─█▄█─███─▄█▀██─▄─▄█████─███─██─█─██─██─██▀██─▄▀███─████─███
         ▀▄▄▄▄▀▀▄▄▀▄▄▀▄▄▄▀▀▄▄▀▄▀▄▀▄▄▀▄▄▀▄▄▄▀▄▄▄▀▄▄▄▀▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▀▀▀▄▄▄▀▀▄▄▄▄▀▄▄▄▄▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▀▀▄▄▄▀▀
         """
-
         main_menu = f"""{Fore.RESET}
                                     +------------+---------+----------+
                                     |   Tools    | Version | Working? |
@@ -34,6 +33,7 @@ class Menu:
                                     | NitroGen   |     1.0 | YES      |
                                     | GiftCard   |     1.0 | YES      |
                                     |DC ACC Nuker|     1.0 | YES      |
+                                    | CS:GO ESP  |     1.0 | YES      |
                                     +------------+---------+----------+
         """
         
@@ -44,8 +44,6 @@ class Menu:
     def reopen_console(self):
         command = input("\n> ")
         self.console(command=command)
-
-
     def slowType(self, text, speed, newLine = True):
             for i in text:
                 print(i, end = "", flush = True)
@@ -64,13 +62,13 @@ class Menu:
             BTCStealer - Steal BTC
             giftcard - Generate gift cards
             dcaccnuker - Nuke discord accounts
+            csgoesp - CS:GO ESP
             help - Show this help
             clear - Clear the console
             exit - Exit the console
             
             """)
             self.reopen_console()
-        #check if a command has passed to the console
         if command == 'ping':
             self.reopen_console()
         if command == 'portscan':
@@ -93,6 +91,8 @@ class Menu:
             os.system("python giftcardgen/main.py")
         if command == 'dcaccnuker':
             os.system("python accnuker/main.py")
+        if command == 'csgoesp':
+            os.system("python csgoesp/main.py")
 if __name__ == '__main__':
     menu = Menu()
     menu.main()
