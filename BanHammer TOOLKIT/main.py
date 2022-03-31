@@ -33,7 +33,7 @@ class Menu:
                                     | NitroGen   |     1.0 | YES      |
                                     | GiftCard   |     1.0 | YES      |
                                     |DC ACC Nuker|     1.0 | YES      |
-                                    | CS:GO ESP  |     1.0 | YES      |
+                                    |CS:GO hacks |     1.0 | YES      |
                                     +------------+---------+----------+
         """
         
@@ -62,7 +62,7 @@ class Menu:
             BTCStealer - Steal BTC
             giftcard - Generate gift cards
             dcaccnuker - Nuke discord accounts
-            csgoesp - CS:GO ESP
+            csgohacks - CS:GO hacks
             help - Show this help
             clear - Clear the console
             exit - Exit the console
@@ -91,7 +91,7 @@ class Menu:
             os.system("python giftcardgen/main.py")
         if command == 'dcaccnuker':
             os.system("python accnuker/main.py")
-        if command == 'csgoesp':
+        if command == 'csgohacks':
             os.system("python csgoesp/main.py")
 if __name__ == '__main__':
     menu = Menu()
