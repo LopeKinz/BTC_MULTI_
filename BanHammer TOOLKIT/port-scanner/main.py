@@ -7,37 +7,34 @@ import pyfiglet
 import sys
 import socket
 from datetime import datetime
+from colorama import *
 
-def clear_console():
-    os.system('cls' if os.name=='nt' else 'clear')
 
-clear_console()
+
+
 target = input('Please enter IPV4 adress: ')
-clear_console()
+
 
 print(f'Target: {target}\nPort Range: 1 - 65535')
 
 try:
     for port in range(1,65535):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        socket.setdefaulttimeout(1)
-         
+        socket.setdefaulttimeout(0.01)
         result = s.connect_ex((target,port))
+        print(f'{Fore.RED}Port {port}|Result : {result} CLOSED')
         if result == 0:
-            print("Port {} is open".format(port))
+            print(f"{Fore.Green}Port {port} is open")
         s.close()
 
 except KeyboardInterrupt:
-        clear_console()
         print("Exiting...")
-        sys.exit()
+        os.system("python main.py")
 
 except socket.gaierror:
-        clear_console()
         print("Hostname Could Not Be Resolved...")
-        sys.exit()
+        os.system("python main.py")
 
 except socket.error:
-        clear_console()
         print("Server not responding...")
-        sys.exit()
+        os.system("python main.py")
