@@ -39,11 +39,9 @@ def server(i):
                     print("ok")
                     end = time.time()
                     print(f"{Fore.LIGHTYELLOW_EX} Thread %d = {Fore.YELLOW}PubKey: {address} |PrivKey : {privadress} | Balance : 0 |{Fore.MAGENTA} Processtime : {int(math.ceil(end - start))} sec" % i)
-                
+
                 if error1 in r.text or error2 in r.text:
                     print(f"{Fore.RED}Error #1 NO_API_CONNECTION or Error #2 API_UNDER_MAINTANCE")
-                    pass
-                
                 if hit in r.text:
                     print(f"{Fore.GREEN}HIT! PubKey: {address} |PrivKey : {privadress}| Results : {r.text}")
                     time.sleep(60)

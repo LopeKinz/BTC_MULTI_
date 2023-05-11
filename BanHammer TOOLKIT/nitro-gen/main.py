@@ -16,7 +16,7 @@ clear_console()
 print('Generating Codes Now!')
 
 count=0
-for i in range(amount):
+for _ in range(amount):
     count+=1
     code = "https://discordapp.com/gifts/%s" % (('').join(random.choices(string.ascii_letters + string.digits, k=16)))
     os.system(f'title Count: {count} Current: {code}')

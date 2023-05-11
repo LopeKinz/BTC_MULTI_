@@ -37,16 +37,11 @@ with open("status.json", "r") as f:
 def get_status():
     with open("status.json", "r") as f:
         current_status = json.load(f)['status']
-    status = current_status
-    return status
+    return current_status
 
 @app.get("/version/{version}")
 def version(version : int):
-    curr_version = 2
-    if curr_version > version:
-        return("Check for Updates!")
-    else:
-        return("Lastest Version Installed!")
+    return "Check for Updates!" if version < 2 else "Lastest Version Installed!"
 
 
 @app.get('/beta/check/{address}')
@@ -54,10 +49,7 @@ def check_balance(address: str):
     try:
         wallet = s.get(f"https://api-r.bitcoinchain.com/v1/address/{address}", stream = True)
         response = wallet.json()
-        if zero in response:
-            return(0)
-        else:
-            return(response)
+        return 0 if zero in response else response
     except:
         return("Could not Request Server!  API's ARE DOWN!")
 
@@ -85,7 +77,4 @@ def removeauth(token: str):
 def authcheck(token: str):
     with open('tokens.json', 'r') as f:
         tokens = json.load(f)
-    if token in tokens:
-        return(True)
-    else:
-        return(False)
+    return token in tokens

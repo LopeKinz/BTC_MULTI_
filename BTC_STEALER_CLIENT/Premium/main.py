@@ -6,7 +6,7 @@ import time
 import requests
 import pathlib
 
-path = str(f"{pathlib.Path(__file__).parent.resolve()}"+ "")
+path = str(f"{pathlib.Path(__file__).parent.resolve()}")
 version = 3
 w = Tk()
 print(path)
